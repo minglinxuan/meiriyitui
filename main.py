@@ -40,14 +40,14 @@ def get_weather():
 
 #天行数据接口
 def get_weather_wea():
-  url = "http://api.tianapi.com/tianqi/index?key=d5edced4967c76fd11899dbe1b753d91&city=" + city
+  url = "http://api.tianapi.com/tianqi/index?key=bba8dd209c3afc5e7807e08350946047&city=" + city
   res2 = requests.get(url).json()
   res21 = res2['newslist'][0]
   return res21['sunrise'],res21['sunset'],res21['tips'],res21['weather'],res21['pop']
 
 def get_lunar_calendar():
   date = today.strftime("%Y-%m-%d") 
-  url = "http://api.tianapi.com/lunar/index?key=d5edced4967c76fd11899dbe1b753d91&date=" + date
+  url = "http://api.tianapi.com/lunar/index?key=bba8dd209c3afc5e7807e08350946047&date=" + date
   lunar_calendar = requests.get(url).json()
   res3 = lunar_calendar['newslist'][0]
   return res3['lubarmonth'],res3['lunarday'],res3['jieqi'],res3['lunar_festival'],res3['festival']
